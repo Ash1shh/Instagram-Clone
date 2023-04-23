@@ -2,26 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* target button */
+@layer components {
+  .navBtn {
+    @apply hidden h-6 md:inline-flex
+    cursor-pointer hover:scale-125
+    transition-all duration-150 ease-out;
+  }
+  .btn {
+    @apply h-7 hover:scale-125 cursor-pointer transition-all duration-150 ease-out;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.pb-full {
+  padding-bottom: 100%;
+}
+
+.bioclass {
+  color: #8e8e8e;
+}
+
+/* hide search icon on search focus */
+.search-bar:focus + .fa-search {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .post:hover .overlay {
+    display: block;
+  }
+}
+
+.heart_tip::before {
+  position: absolute;
+  content: "";
+  border: 15px solid transparent;
+  border-bottom-color: #ef4444;
+  left: 50%;
+  transform: translate(-50%, -130%);
+}
+
+.heart_tip,
+.heart_tip::before {
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+}
+
+.heart_tip::after {
+  height: 30%;
+  width: 40%;
+  background-color: #ef4444;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  content: "";
+}
+
+.search-tip::before {
+  position: absolute;
+  content: "";
+  border: 20px solid transparent;
+  border-bottom-color: #fff;
+  left: 50%;
+  transform: translate(-50%, -130%);
+}
+
+.search-tip,
+.search-tip::before {
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+}
+
+.search-tip::after {
+  height: 15%;
+  width: 40%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  content: "";
 }
