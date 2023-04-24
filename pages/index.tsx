@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 
 import { Session } from "next-auth";
 import Feed from "../components/Feed";
-import Header from "../components/Header";
 import { firestore } from "../firebase/firebase";
+import Sidebar from "@/components/Sidebar";
 
 type Props = {
   session: Session;
@@ -61,8 +61,11 @@ const Home = ({ session }: Props) => {
           href="https://i.postimg.cc/wjt4vkWx/pngwing-com-1.png"
         />
       </Head>
-      <Header />
-      <Feed session={session} />
+
+      <main className="grid grid-cols-6">
+        <Sidebar />
+        <Feed session={session} />
+      </main>
     </motion.div>
   );
 };

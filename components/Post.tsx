@@ -131,22 +131,22 @@ const Post: React.FC<PostProps> = ({
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="bg-white my-7 border rounded-sm"
+      className="bg-white my-7 rounded-sm border-b-2 border-gray-400"
     >
-      <div className="flex items-center p-5">
+      <div className="flex items-center py-2">
         <img
           className="rounded-full h-12 object-contain
-        border p-1 mr-3 cursor-pointer"
+        mr-3 cursor-pointer   p-[1.5px] border-red-500 border-2"
           src={userImage}
           alt=""
           onClick={handleChangePage}
         />
-        <p
-          className="flex-1 font-bold cursor-pointer"
-          onClick={handleChangePage}
-        >
-          {username}
-        </p>
+        <div className="flex flex-col flex-1">
+          <p className="font-bold cursor-pointer" onClick={handleChangePage}>
+            {username}
+          </p>
+          <p className="text-sm text-gray-500 font-bold cursor-pointer">India</p>
+        </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -162,9 +162,13 @@ const Post: React.FC<PostProps> = ({
           />
         </svg>
       </div>
-      <img src={img} className="object-cover w-full" alt="" />
+      <img
+        src={img}
+        className="object-cover w-full border-2 border-gray-400"
+        alt=""
+      />
       {session && (
-        <div className="flex justify-between px-4 pt-4">
+        <div className="flex justify-between pt-3">
           <div className="flex space-x-4">
             {hasLikes ? (
               <motion.button
@@ -263,7 +267,7 @@ const Post: React.FC<PostProps> = ({
         </div>
       )}
 
-      <p className="p-5">
+      <p className="py-3">
         {likes.length > 0 && (
           <p className="font-bold mb-1">{likes.length} likes</p>
         )}
@@ -273,7 +277,7 @@ const Post: React.FC<PostProps> = ({
 
       {/* comments */}
       {comments.length > 0 && (
-        <div className="ml-10 h-20 overflow-y-scroll scrollbar-thin scrollbar-thumb-black">
+        <div className="h-20 overflow-y-scroll scrollbar-thin scrollbar-thumb-black">
           {comments.map((comment) => (
             <div
               key={comment.id}
@@ -300,7 +304,7 @@ const Post: React.FC<PostProps> = ({
       )}
 
       {session && (
-        <form className="flex items-center p-4">
+        <form className="flex items-center px-4 py-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
