@@ -22,8 +22,8 @@ const Stories: React.FC<StoriesProps> = () => {
 
   return (
       <div
-        className="
-    flex space-x-2 px-6 py-3 bg-white mt-8 border-gray-200 border rounded-sm overflow-x-scroll scrollbar-thin scrollbar-hide mx-8"
+        className="dark:bg-[#121212]
+    flex space-x-2 px-6 py-3 bg-white mt-8 rounded-sm overflow-x-scroll scrollbar-thin scrollbar-hide mx-8"
       >
         {session && (
           <Story img={session?.user?.image!} username={session?.user?.name!} />

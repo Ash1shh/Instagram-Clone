@@ -86,7 +86,7 @@ const PostModal: React.FC<PostModalProps> = ({ open, setOpen }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} className="rounded-md">
+        <Box sx={style} className="rounded-md dark:bg-[#121212]">
           <div>
             <div
               className="inline-block 
@@ -106,7 +106,7 @@ const PostModal: React.FC<PostModalProps> = ({ open, setOpen }) => {
                 ) : (
                   <div
                     className="mx-auto flex items-center justify-center h-12
-                w-12 rounded-full bg-red-100 cursor-pointer"
+                w-12 rounded-full bg-red-100 cursor-pointer dark:bg-[#121212]"
                     onClick={() => selectedFileRef.current?.click()}
                   >
                     <CameraAltIcon
@@ -119,7 +119,7 @@ const PostModal: React.FC<PostModalProps> = ({ open, setOpen }) => {
                 <div>
                   <div className="mt-3 text-center sm:mt-5">
                     {!selectedFile && (
-                      <Typography className="text-lg leading-6 font-medium text-green-900">
+                      <Typography className="text-lg leading-6 font-medium text-green-900 dark:text-white">
                         Upload a Photo
                       </Typography>
                     )}
@@ -131,10 +131,10 @@ const PostModal: React.FC<PostModalProps> = ({ open, setOpen }) => {
                         onChange={onSelectedFile}
                       />
                     </div>
-                    <div className="mt-2">
+                    <div className="mt-4 dark:border dark:border-zinc-700">
                       <input
                         className="border-none focus:ring-0  w-full 
-                      text-center"
+                      text-center dark:bg-[#121212]"
                         type="text"
                         value={caption}
                         placeholder="Please Enter a Caption..."
@@ -152,7 +152,7 @@ const PostModal: React.FC<PostModalProps> = ({ open, setOpen }) => {
                 border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base
                 font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2
                 focus:ring-offset-2 focus:ring-red-500 sm:text-sm disabled:bg-blue-400
-                disabled:cursor-not-allowed hover:disabled:bg-blue-500"
+                disabled:cursor-not-allowed hover:disabled:bg-blue-500" 
                     >
                       <LoopIcon className="animate-spin" />
                     </button>
@@ -163,8 +163,8 @@ const PostModal: React.FC<PostModalProps> = ({ open, setOpen }) => {
                       className="inline-flex justify-center w-full rounded-md 
                 border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base
                 font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2
-                focus:ring-offset-2 focus:ring-red-500 sm:text-sm disabled:bg-gray-300
-                disabled:cursor-not-allowed hover:disabled:bg-gray-300"
+                focus:ring-offset-2 focus:ring-red-500 sm:text-sm disabled:bg-red-300
+                disabled:cursor-not-allowed hover:disabled:bg-red-400 dark:bg-[#121212] dark:border dark:border-zinc-700"
                       onClick={handleCreateCommunity}
                     >
                       Post

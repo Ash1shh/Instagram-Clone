@@ -131,7 +131,7 @@ const Post: React.FC<PostProps> = ({
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="bg-white my-7 rounded-sm border-b-2 border-gray-400"
+      className="bg-white dark:bg-[#121212] my-7 rounded-sm border-b-2 border-gray-400"
     >
       <div className="flex items-center py-2">
         <img
@@ -164,7 +164,7 @@ const Post: React.FC<PostProps> = ({
       </div>
       <img
         src={img}
-        className="object-cover w-full border-2 border-gray-400"
+        className="object-cover w-full border-2 border-zinc-400 dark:border-zinc-800"
         alt=""
       />
       {session && (

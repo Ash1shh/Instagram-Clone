@@ -64,7 +64,7 @@ const Home = ({ session }: Props) => {
 
       <main className="grid grid-cols-6">
         <Sidebar />
-        <Feed session={session} />
+        <Feed />
       </main>
     </motion.div>
   );

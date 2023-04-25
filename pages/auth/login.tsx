@@ -24,8 +24,7 @@ const Login: React.FC<LoginProps> = () => {
       </Head>
 
       <div className="flex flex-col items-center justify-center min-h-screen py-2 -m-36 px-14 text-center pt-60">
-        <Image
-          className="w-70"
+        <img
           src="https://www.pngmart.com/files/13/Instagram-Logo-PNG-Transparent.png"
           alt=""
         />

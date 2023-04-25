@@ -1,4 +1,3 @@
-import { Session } from "next-auth";
 import React from "react";
 
 import MiniProfile from "./MiniProfile";
@@ -6,11 +5,7 @@ import Posts from "./Posts";
 import Stories from "./Stories";
 import Suggestions from "./Suggestions";
 
-type FeedProps = {
-  session: Session;
-};
-
-const Feed: React.FC<FeedProps> = ({ session }) => {
+const Feed: React.FC = () => {
   return (
     <main className="col-span-5 grid grid-cols-1 md:grid-cols-2 md:max-w-3xl xl:grid-cols-3 xl:max-w-6xl mx-auto">
       <section className="col-span-2">
@@ -18,14 +13,12 @@ const Feed: React.FC<FeedProps> = ({ session }) => {
         <Posts />
       </section>
 
-      {session && (
-        <section className="hidden xl:inline-grid md:col-span-1">
-          <div className="fixed">
-            <MiniProfile />
-            <Suggestions />
-          </div>
-        </section>
-      )}
+      <section className="hidden xl:inline-grid md:col-span-1">
+        <div className="fixed">
+           <MiniProfile />
+          <Suggestions />
+        </div>
+      </section>
     </main>
   );
 };

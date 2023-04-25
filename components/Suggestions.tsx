@@ -22,7 +22,7 @@ const Suggestions: React.FC<SuggestionsProps> = () => {
     <div className="mt-4 ml-10">
       <div className="flex justify-between text-sm nb-d-5">
         <h3 className="text-sm font-bold text-gray-400">Suggestions for you</h3>
-        <button className="text-gray-600 font-semibold">See All</button>
+        <button className="text-gray-600 font-semibold hover:text-gray-500">See All</button>
       </div>
       {suggestions.map((profile) => (
         <div
