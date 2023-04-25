@@ -37,7 +37,7 @@ const Posts: React.FC<PostsProps> = () => {
   }, [firestore]);
 
   return (
-    <div className="px-28">
+    <div className="md:px-28">
       {loading ? (
         <>
           {posts.map((post) => (

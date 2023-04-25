@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+import Image from "next/image";
 import React from "react";
 
 type SearchTipProps = {
@@ -17,7 +18,9 @@ const SearchTip: React.FC<SearchTipProps> = ({ searchValue }) => {
         <div className="flex items-center">
           <div className="avatar">
             <div className="rounded-full w-14 h-14">
-              <img
+              <Image
+              width={56}
+              height={56}
                 src={faker.image.avatar()}
                 alt={faker.name.firstName()}
                 className="rounded-full p-[1.5px] border-blue-500 border-2"

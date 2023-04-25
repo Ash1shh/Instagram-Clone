@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { faker } from "@faker-js/faker";
+import Link from "next/link";
+import Image from "next/image";
 
 type SuggestionsProps = {};
 
@@ -28,7 +30,9 @@ const Suggestions: React.FC<SuggestionsProps> = () => {
           key={profile.id}
           className="flex items-center justify-between space-y-4"
         >
-          <img
+          <Image
+          width={40}
+          height={40}
             className="w-10 h-10
           rounded-full border p-[2px]"
             src={profile.avatar}
@@ -46,59 +50,59 @@ const Suggestions: React.FC<SuggestionsProps> = () => {
 
       <div className="mt-6">
         <div className="flex space-x-1 w-72">
-          <a href="/">
+          <Link href="/">
             <p className="w-max text-xs leading-5 font-medium text-gray-500 dark:text-[#70767B] hover:underline">
               About ·
             </p>
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="/">
             <p className="w-max text-xs leading-5 font-medium text-gray-500 dark:text-[#70767B] hover:underline">
               Help ·
             </p>
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="/">
             <p className="w-max text-xs leading-5 font-medium text-gray-500 dark:text-[#70767B] hover:underline">
               Press ·
             </p>
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="/">
             <p className="w-max text-xs leading-5 font-medium text-gray-500 dark:text-[#70767B] hover:underline">
               API ·
             </p>
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="/">
             <p className="w-max text-xs leading-5 font-medium text-gray-500 dark:text-[#70767B] hover:underline">
               Jobs ·
             </p>
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="/">
             <p className="w-max text-xs leading-5 font-medium text-gray-500 dark:text-[#70767B] hover:underline">
               Privacy ·
             </p>
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="/">
             <p className="w-max text-xs leading-5 font-medium text-gray-500 dark:text-[#70767B] hover:underline">
               Terms ·
             </p>
-          </a>
+          </Link>
         </div>
 
         <div className="flex space-x-1 w-52">
-          <a href="/">
+          <Link href="/">
             <p className="w-max text-xs leading-5 font-medium text-gray-500 dark:text-[#70767B] hover:underline">
               Locations ·
             </p>
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="/">
             <p className="w-max text-xs  leading-5 font-medium text-gray-500 dark:text-[#70767B] hover:underline">
               Language ·
             </p>
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="/">
             <p className="w-max text-xs  leading-5 font-medium text-gray-500 dark:text-[#70767B] hover:underline">
               Meta Verified ·
             </p>
-          </a>
+          </Link>
         </div>
 
         <div className="mt-5">

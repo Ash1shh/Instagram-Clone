@@ -22,17 +22,22 @@ function Sidebar() {
     <div className="col-span-1 flex flex-col justify-between border-r-2  border-gray-400">
       <div className="fixed">
         <img
-          className="mt-10 mb-4 cursor-pointer object-cover w-28 ml-8"
+          className="hidden lg:inline-grid mt-10 mb-4 cursor-pointer object-cover w-28 ml-8"
           src="https://i.postimg.cc/HsQWcQVm/Instagram-logo-svg.png"
           alt=""
         />
+        <img
+              className="w-6 lg:hidden flex-shrink-0 mt-10 mb-4 cursor-pointer ml-8"
+              src="https://i.postimg.cc/TPPWJkDg/5ecec78673e4440004f09e77.png"
+              alt=""
+            />
         <div className="flex flex-col item-center px-4 md:items-start cursor-pointer  space-y-72">
           <div className="flex flex-col space-y-1 ">
             <div className="group flex max-w-fit cursor-pointer items-center space-x-2 rounded-full px-4 py-3 transition-all duration-200  ">
               <HomeIcon className="h-6 w-6" />
               <p
-                className="hidden text-base font-light md:inline-flex 
-            lg:text-xl  "
+                className="hidden text-base font-light lg:inline-flex 
+            lg:text-xl"
               >
                 Home
               </p>
@@ -40,7 +45,7 @@ function Sidebar() {
             <div className="group flex max-w-fit cursor-pointer items-center space-x-2 rounded-full px-4 py-3 transition-all duration-200  ">
               <MagnifyingGlassIcon className="h-6 w-6" />
               <p
-                className="hidden text-base font-light md:inline-flex 
+                className="hidden text-base font-light lg:inline-flex 
             lg:text-xl  "
               >
                 Search
@@ -81,7 +86,7 @@ function Sidebar() {
                 ></circle>
               </svg>
               <p
-                className="hidden text-base font-light md:inline-flex 
+                className="hidden text-base font-light lg:inline-flex 
             lg:text-xl  "
               >
                 Explore
@@ -144,7 +149,7 @@ function Sidebar() {
                 ></path>
               </svg>
               <p
-                className="hidden text-base font-light md:inline-flex 
+                className="hidden text-base font-light lg:inline-flex 
             lg:text-xl  "
               >
                 Reels
@@ -153,7 +158,7 @@ function Sidebar() {
             <div className="group flex max-w-fit cursor-pointer items-center space-x-2 rounded-full px-4 py-3 transition-all duration-200  ">
               <PaperAirplaneIcon className="h-6 w-6 -rotate-45" />
               <p
-                className="hidden text-base font-light md:inline-flex 
+                className="hidden text-base font-light lg:inline-flex 
             lg:text-xl  "
               >
                 Messages
@@ -162,7 +167,7 @@ function Sidebar() {
             <div className="group flex max-w-fit cursor-pointer items-center space-x-2 rounded-full px-4 py-3 transition-all duration-200  ">
               <HeartIcon className="h-6 w-6" />
               <p
-                className="hidden text-base font-light md:inline-flex 
+                className="hidden text-base font-light lg:inline-flex 
             lg:text-xl  "
               >
                 Notifications
@@ -174,7 +179,7 @@ function Sidebar() {
             >
               <PlusCircleIcon className="h-6 w-6" />
               <p
-                className="hidden text-base font-light md:inline-flex 
+                className="hidden text-base font-light lg:inline-flex 
             lg:text-xl  "
               >
                 Create
@@ -187,7 +192,7 @@ function Sidebar() {
                   className="group flex max-w-fit cursor-pointer items-center space-x-2 rounded-full px-4 py-3 transition-all duration-200  "
                 >
                   <UserIcon className="h-6 w-6" />
-                  <p className="hidden text-base font-light md:inline-flex lg:text-xl">
+                  <p className="hidden text-base font-light lg:inline-flex lg:text-xl">
                     Sign Out
                   </p>
                 </div>
@@ -198,7 +203,7 @@ function Sidebar() {
                 className="group flex max-w-fit cursor-pointer items-center space-x-2 rounded-full px-4 py-3 transition-all duration-200  "
               >
                 <UserIcon className="h-6 w-6" />
-                <p className="hidden text-base font-light md:inline-flex lg:text-xl">
+                <p className="hidden text-base font-light lg:inline-flex lg:text-xl">
                   Sign In
                 </p>
               </div>
@@ -208,7 +213,7 @@ function Sidebar() {
             <div className="group flex max-w-fit cursor-pointer items-center space-x-2 rounded-full px-4 py-3 transition-all duration-200  ">
               <Bars3Icon className="h-6 w-6" />
               <p
-                className="hidden text-base font-light md:inline-flex 
+                className="hidden text-base font-light lg:inline-flex 
             lg:text-xl  "
               >
                 More
