@@ -16,7 +16,6 @@ const Suggestions: React.FC<SuggestionsProps> = () => {
       id: i,
     }));
     setSuggestions(suggestions);
-    //console.log(suggestions);
   }, []);
 
   return (
@@ -30,9 +29,7 @@ const Suggestions: React.FC<SuggestionsProps> = () => {
           key={profile.id}
           className="flex items-center justify-between space-y-4"
         >
-          <Image
-          width={40}
-          height={40}
+          <img
             className="w-10 h-10
           rounded-full border p-[2px]"
             src={profile.avatar}

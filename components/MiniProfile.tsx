@@ -1,5 +1,4 @@
 import { signOut, useSession } from "next-auth/react";
-import Image from "next/image";
 import React from "react";
 
 type MiniProfileProps = {};
@@ -9,9 +8,7 @@ const MiniProfile: React.FC<MiniProfileProps> = () => {
 
   return (
     <div className="flex items-center justify-between mt-14 ml-10">
-      <Image
-      width={64}
-      height={64}
+      <img
         className="w-16 h-16 rounded-full border p-[2px]"
         src={session?.user?.image!}
         alt=""
