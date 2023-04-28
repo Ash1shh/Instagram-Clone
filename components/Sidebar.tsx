@@ -26,6 +26,7 @@ function Sidebar() {
       <div className="fixed">
         {resolvedTheme === "dark" ? (
           <svg
+            onClick={() => router.push("/")}
             aria-label="Instagram"
             className="_ab6- hidden lg:inline-grid mt-12 mb-6 cursor-pointer object-cover ml-8"
             color="rgb(245, 245, 245)"
@@ -44,20 +45,24 @@ function Sidebar() {
           </svg>
         ) : (
           <img
+            onClick={() => router.push("/")}
             className="hidden lg:inline-grid mt-10 mb-4 cursor-pointer object-cover w-28 ml-8"
             src="https://i.postimg.cc/HsQWcQVm/Instagram-logo-svg.png"
             alt=""
           />
         )}
         <img
+          onClick={() => router.push("/")}
           className="w-6 lg:hidden flex-shrink-0 mt-10 mb-4 cursor-pointer ml-8"
           src="https://i.postimg.cc/TPPWJkDg/5ecec78673e4440004f09e77.png"
           alt=""
         />
         <div className="flex flex-col item-center px-4 md:items-start cursor-pointer  space-y-72">
           <div className="flex flex-col space-y-1 ">
-            <div className="group flex max-w-fit cursor-pointer items-center space-x-2 rounded-full px-4 py-3 transition-all duration-200  ">
-              <HomeIcon className="h-6 w-6" />
+            <div 
+            onClick={() => router.push("/")}
+            className="group flex max-w-fit cursor-pointer items-center space-x-2 rounded-full px-4 py-3 transition-all duration-200  ">
+              <HomeIcon className="h-6 w-6"/>
               <p
                 className="hidden text-base font-light lg:inline-flex 
             lg:text-xl"

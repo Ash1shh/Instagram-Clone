@@ -325,7 +325,7 @@ const Post: React.FC<PostProps> = ({
             value={comment}
             onChange={(e) => setComment(e.target.value)}
             placeholder="Add a comment..."
-            className="border-none flex-1 focus:ring-0 outline-none"
+            className="border-none flex-1 focus:ring-0 outline-none dark:bg-[#121212]"
           />
           {loading ? (
             <svg

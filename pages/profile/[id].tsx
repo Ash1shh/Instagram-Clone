@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 import Header from "../../components/Header";
 import MainProfile from "../../components/profilePage/MainProfile";
+import Sidebar from "@/components/Sidebar";
 
 type ProfilePageProps = {
   session: any;
@@ -34,8 +35,10 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ session }) => {
           href="https://i.postimg.cc/wjt4vkWx/pngwing-com-1.png"
         />
       </Head>
-      <Header />
-      <MainProfile />
+      <main className="grid grid-cols-6">
+        <Sidebar />
+        <MainProfile />
+      </main>
     </motion.div>
   );
 };

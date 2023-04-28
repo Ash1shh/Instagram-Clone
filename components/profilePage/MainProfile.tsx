@@ -6,7 +6,7 @@ import { UserData } from "../../typings";
 import Intro from "./Intro";
 import ProfileFeed from "./ProfileFeed";
 import ProfileHeader from "./ProfileHeader";
-import Tag from "./Tag";
+import HighLights from "./HighLights";
 
 type Props = {};
 
@@ -39,10 +39,10 @@ export default function MainProfile({}: Props) {
   }, [userDetails]);
 
   return (
-    <main className="bg-gray-100 bg-opacity-25">
+    <main className="bg-gray-100 bg-opacity-25 col-span-5 dark:bg-[#121212]">
       <div className="lg:w-8/12 lg:mx-auto mb-8">
         <ProfileHeader isShow={isShow} userData={userData as UserData} />
-        <Tag />
+        <HighLights />
         <div className="px-px md:px-3">
           <Intro />
           <ProfileFeed userId={userId as string} setUserData={setUserDetails} />

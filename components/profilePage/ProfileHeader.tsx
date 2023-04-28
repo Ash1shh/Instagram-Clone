@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { faker } from "@faker-js/faker";
 import AvatarSkeleton from "../Skeleton/AvatarSkeleton";
 import { motion } from "framer-motion";
 
 import { UserData } from "../../typings";
+import { firestore } from "../../firebase/firebase";
+import { collection, onSnapshot } from "firebase/firestore";
 
 type ProfileHeaderProps = {
   isShow: boolean;
@@ -11,6 +13,41 @@ type ProfileHeaderProps = {
 };
 
 const ProfileHeader: React.FC<ProfileHeaderProps> = ({ isShow, userData }) => {
+  const [posts, setposts] = useState<any[]>([]);
+  useEffect(
+    () =>
+      onSnapshot(collection(firestore, "posts"), (snapshot) =>
+        setposts(snapshot.docs)
+      ),
+    [firestore]
+  );
+
+  const letters = ["K", "M"];
+  const randomIndex = faker.datatype.number({ min: 0, max: 1 });
+
+  const company = ["FACEBOOK", "APPLE", "AMAZON", "NETFLIX", "GOOGLE"];
+  const randomCompany = faker.datatype.number({ min: 0, max: 4 });
+
+  const details = [
+    " The social network that connects over 2 billion people across the globe. Join us and share your story with the world. 🌎👥💬",
+    "Innovation is at the heart of everything we do. From iPhones to iPads, Macs to Apple Watches, we're constantly pushing the boundaries of technology to make your life better. 🍎💻📱",
+    "Your one-stop-shop for all your needs, from books to groceries, electronics to fashion. Our mission is to be the world's most customer-centric company, and we're just getting started. 🛍️📦💻",
+    "Streaming the best movies and TV shows from around the world, we're the go-to destination for binge-worthy entertainment. Whether you're into drama, comedy, or documentaries, we've got something for everyone. 🎬🍿📺",
+    "We're more than just a search engine. From Gmail to Google Maps, Google Photos to Google Drive, we're here to help you get things done, learn new things, and connect with the world. Join us on a journey of exploration and discovery. 🔍🌍💻",
+  ];
+
+  const randomdetails = () => details[randomCompany];
+
+  const links = [
+    "https://www.facebook.com/",
+    "https://www.apple.com/",
+    "https://www.amazon.com/",
+    "https://www.netflix.com/",
+    "https://www.google.com/",
+  ];
+
+  const randomlinks = () => links[randomCompany];
+
   return (
     <header className="flex flex-wrap items-center p-4 md:py-8">
       <div className="md:w-3/12 md:ml-16">
@@ -49,13 +86,13 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ isShow, userData }) => {
             <i className="fas fa-check text-white text-xs absolute inset-x-0 ml-1 mt-px"></i>
           </span>
 
-          <div className="bg-blue-500 text-white hover:bg-blue-600 px-2 hover:text-white py-1 font-semibold text-sm rounded text-center sm:inline-block block cursor-pointer">
+          <div className="bg-blue-500 text-white hover:bg-blue-600 px-2 hover:text-white py-1 font-semibold text-sm rounded text-center sm:inline-block block cursor-pointer mr-2">
             Follow
           </div>
           {isShow && (
             <span className="text-base font-semibold text-gray-700">
               <button
-                className="p-1 border-transparent text-gray-700 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600 cursor-pointer"
+                className="p-1 border-transparent dark:text-white text-gray-700 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600 cursor-pointer"
                 aria-label="Notifications"
               >
                 <svg
@@ -77,40 +114,35 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ isShow, userData }) => {
 
         <ul className="hidden md:flex space-x-8 mb-4">
           <li>
-            <span className="font-semibold">{faker.random.numeric()}</span>
+            <span className="font-semibold">{posts.length}</span>
+            <span> </span>
             posts
           </li>
 
           <li>
-            <span className="font-semibold">{faker.random.numeric()}K</span>
+            <span className="font-semibold">
+              {parseFloat(faker.finance.amount(1, 20, 1))}
+              {letters[randomIndex]}
+            </span>
+            <span> </span>
             followers
           </li>
           <li>
             <span className="font-semibold">{faker.random.numeric()}</span>
+            <span> </span>
             following
           </li>
         </ul>
 
         <div className="hidden md:block">
+          <h1 className="font-semibold">{userData.username}</h1>
           <h1 className="font-semibold">{userData.company}</h1>
-          <span className="bioclassName">{faker.company.name()}</span>
-          <p>{faker.commerce.productDescription()}</p>
+          <span className="bioclassName">CEO OF {company[randomCompany]}</span>
+          <p>{randomdetails()}</p>
           <span>
-            <strong>{faker.internet.domainName()}</strong>
+            <strong>{randomlinks()}</strong>
           </span>
         </div>
-      </div>
-
-      <div className="md:hidden text-sm my-2">
-        <h1 className="font-semibold">ByteWebster</h1>
-        <span className="bioclassName">Internet company</span>
-        <p>
-          ByteWebster is a web development and coding blog website. Where we
-          provide professional web projects🌍
-        </p>
-        <span>
-          <strong>www.bytewebster.com</strong>
-        </span>
       </div>
     </header>
   );

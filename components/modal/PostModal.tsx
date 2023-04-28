@@ -86,8 +86,11 @@ const PostModal: React.FC<PostModalProps> = ({ open, setOpen }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} className="rounded-md dark:bg-[#121212]">
-          <div>
+        <Box
+          sx={style}
+          className="rounded-md dark:bg-[#262626] md:w-1/3 md:h-4/5 flex items-center justify-between"
+        >
+          <div className="flex md:h-full md:w-full">
             <div
               className="inline-block 
             rounded-lg px-0 pt-5 pb-0
@@ -95,7 +98,13 @@ const PostModal: React.FC<PostModalProps> = ({ open, setOpen }) => {
             shadow-xl transform transition-all sm:my-0 
             sm:align-middle sm:w-full sm:p-8"
             >
-              <div>
+              <div className="flex items-center justify-center absolute inset-x-0 top-0 border-b py-2 border-zinc-700">
+                <h1 className="font-bold p-0 m-0">
+                  Create new post
+                </h1>
+              </div>
+
+              <div className="items-center justify-center flex flex-col md:h-full md:w-full">
                 {selectedFile ? (
                   <img
                     src={selectedFile}
@@ -116,7 +125,7 @@ const PostModal: React.FC<PostModalProps> = ({ open, setOpen }) => {
                   </div>
                 )}
 
-                <div>
+                <div className="justify-end">
                   <div className="mt-3 text-center sm:mt-5">
                     {!selectedFile && (
                       <Typography className="text-lg leading-6 font-medium text-green-900 dark:text-white">
@@ -152,7 +161,7 @@ const PostModal: React.FC<PostModalProps> = ({ open, setOpen }) => {
                 border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base
                 font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2
                 focus:ring-offset-2 focus:ring-red-500 sm:text-sm disabled:bg-blue-400
-                disabled:cursor-not-allowed hover:disabled:bg-blue-500" 
+                disabled:cursor-not-allowed hover:disabled:bg-blue-500"
                     >
                       <LoopIcon className="animate-spin" />
                     </button>

@@ -25,7 +25,7 @@ const CustomPosts: React.FC<CustomPostsProps> = ({
         setLikes(snapshot.docs)
       ),
     [firestore, id]
-  );
+  );                                                                                                                                                       
   return (
     <>
       {userDBId === userId && (

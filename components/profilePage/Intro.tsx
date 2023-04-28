@@ -9,7 +9,7 @@ const Intro: React.FC<IntroProps> = () => {
         <div className="flex flex-row mt-4 justify-center mr-16">
           <div className="flex text-gray-700 text-center py-2 m-2 pr-5">
             <div className="flex">
-              <button className="border-transparent text-gray-800 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600">
+              <button className="border-transparent dark:text-white text-gray-800 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600">
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -24,13 +24,13 @@ const Intro: React.FC<IntroProps> = () => {
               </button>
             </div>
             <div className="flex ml-2 mt-1">
-              <h3 className="text-sm font-bold text-gray-800 mr-2">POSTS</h3>
+              <h3 className="text-sm font-bold text-gray-800 mr-2 dark:text-white">POSTS</h3>
             </div>
           </div>
 
-          <div className="flex text-gray-700 text-center py-2 m-2 pr-5">
+          <div className="flex text-gray-700 text-center py-2 m-2 pr-5 ">
             <div className="flex">
-              <button className="border-transparent text-gray-600 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600">
+              <button className="border-transparent dark:text-white text-gray-600 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600">
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -44,14 +44,14 @@ const Intro: React.FC<IntroProps> = () => {
                 </svg>
               </button>
             </div>
-            <div className="flex ml-2 mt-1">
-              <h3 className="text-sm font-medium text-gray-700 mr-2">IGTV</h3>
+            <div className="flex ml-2 mt-1 ">
+              <h3 className="text-sm font-medium text-gray-700 mr-2 dark:text-white">REELS</h3>
             </div>
           </div>
 
           <div className="flex text-gray-700 text-center py-2 m-2 pr-5">
             <div className="flex">
-              <button className="border-transparent text-gray-600 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600">
+              <button className="border-transparent dark:text-white text-gray-600 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600">
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -66,13 +66,13 @@ const Intro: React.FC<IntroProps> = () => {
               </button>
             </div>
             <div className="flex ml-2 mt-1">
-              <h3 className="text-sm font-medium text-gray-700 mr-2">SAVED</h3>
+              <h3 className="text-sm font-medium text-gray-700  mr-2 dark:text-white">SAVED</h3>
             </div>
           </div>
 
           <div className="flex text-gray-700 text-center py-2 m-2 pr-5">
             <div className="flex">
-              <button className="border-transparent text-gray-600 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600">
+              <button className="border-transparent text-gray-600 rounded-full dark:text-white hover:text-blue-600 focus:outline-none focus:text-gray-600">
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -87,7 +87,7 @@ const Intro: React.FC<IntroProps> = () => {
               </button>
             </div>
             <div className="flex ml-2 mt-1">
-              <h3 className="text-sm font-medium text-gray-700 mr-2">TAGGED</h3>
+              <h3 className="text-sm font-medium text-gray-700 mr-2 dark:text-white">TAGGED</h3>
             </div>
           </div>
         </div>
