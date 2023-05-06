@@ -79,7 +79,9 @@ function Sidebar() {
                 Search
               </p>
             </div>
-            <div className="group flex max-w-fit cursor-pointer items-center space-x-2 rounded-full px-4 py-3 transition-all duration-200">
+            <div className="group flex max-w-fit cursor-pointer items-center space-x-2 rounded-full px-4 py-3 transition-all duration-200"
+            onClick={() => router.push("/Explore")}
+            >
               {resolvedTheme === "dark" ? (
                 <svg
                   aria-label="Explore"

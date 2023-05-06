@@ -35,7 +35,7 @@ const CustomPosts: React.FC<CustomPostsProps> = ({
           viewport={{ once: true }}
           className="w-1/3 p-px md:px-3"
         >
-          <div className="post bg-gray-100 text-white relative pb-full md:mb-6">
+          <div className="bg-gray-100 text-white relative pb-full md:mb-6">
             <img
               className="w-full h-full absolute left-0 top-0 object-cover cursor-pointer rounded-md"
               src={img}

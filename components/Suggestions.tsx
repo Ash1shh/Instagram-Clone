@@ -39,7 +39,7 @@ const Suggestions: React.FC<SuggestionsProps> = () => {
             <h2 className="font-semibold text-sm">{profile.username}</h2>
             <h3 className="text-xs text-gray-400 font-medium">Follows you</h3>
           </div>
-          <button className="text-blue-400 text-sm font-bold hover:text-black">
+          <button className="text-blue-400 text-sm font-bold hover:text-black dark:hover:text-white">
             Follow
           </button>
         </div>

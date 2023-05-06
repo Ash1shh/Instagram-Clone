@@ -7,9 +7,23 @@ type MiniProfileProps = {};
 const MiniProfile: React.FC<MiniProfileProps> = () => {
   const { data: session } = useSession();
   const router = useRouter();
+  const handleChangePage = () => {
+    if (session) {
+      router.push({
+        pathname: `profile/${session.user?.uid}`,
+        query: {
+          userId: `${session.user?.uid}`.toString(),
+        },
+      });
+    } else {
+      router.push("/auth/login");
+    }
+  };
 
   return (
-    <div className="flex items-center justify-between mt-14 ml-10">
+    <div className="flex items-center justify-between mt-14 ml-10 cursor-pointer"
+    onClick={handleChangePage}
+    >
       {session ? (
         <>
           <img
